@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content = "IE Edge">
+    <meta name="viewpoint" content = "width-device-width, inital scale=1.0"> 
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href = "style.css">
+    <script src="https://kit.fontawesome.com/a5285a3af3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id ="header">
+       <div class="container">
+        <nav>
+            <img src = "/images/HatchfulExport-All/logo_transparent.png" class = "logo">
+
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <!----<li><a href="#Experience">Experience</a></li>--->
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p> Hi, I'm Jason.<br> Welcome to my page!<br> Feel free to look around!</p>
+            <h1></h1>
+        </div>
+       </div> 
+    </div>
+<!-----------------------------------------------About----------------------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src = "images/lofiboy.webp">
+                </div>
+                <div class="about-col-2">
+                    <h1 class = "subtitle" >About Me</h1>
+                    <p> Hi, I'm Jason. I currently attend CSULB, majoring in Computer Engineering and minoring in Computer Science. I am open to any internships related to my field,preferably related to software. I hope to learn and polish my skills as a future software developer through industry experience from these internships.
+
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"  onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"  onclick="opentab('education')" >Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id = "skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web Interfaces</li>
+                            <li><span>Microsoft Excel</span><br>Organizing large amounts of data</li>
+                            <li><span>Microsoft Word</span><br>Documenting technical specifications</li>
+                            <li><span>MATLAB/Simulink</span><br>Simulating electric circuits</li>
+                            <li><span>C++</span><br>Program design</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id = "experience">
+                        <ul>
+                            <li><span>Data Processor</span><br>Meritek Electronics(October 2022 - August 2023)</li>
+                            <li><span>Recieving Associate</span><br>Burlington(July 2021 - October 2022)</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id = "education">
+                        <ul>
+                            <li><span>Current Student </span><br>California State University, Long Beach(August 2020 - May 2026)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-----------------------------------------------Projects----------------------------------------------->
+<div id = "Projects">
+    <div class="container">
+        <h1 class = "subtitle" >Projects</h1>
+        <div class = "projects-list">
+            <div>
+                <!--<i class="fa-solid fa-ship"></i>-->
+                <h2>Battleship</h2>
+                <p>Recreated the classic game of Battleship against the computer</p>
+                <a href = "#"> Learn more</a>
+
+            </div>
+            <div>
+                <!--<i class="fa-solid fa-car"></i>-->
+                <h2>Line Following Robot</h2>
+                <p>Created a car that follows a black line using an ir sensor </p>
+                <a href = "#"> Learn more</a>
+            </div>
+            <div>
+                <!--<i class="fa-solid fa-car"></i>-->
+                <h2>Space Invaders</h2>
+                <p>Implemented the game Space Invaders using a Nokia 5110 LCD, a potentiometer, and a Texas TM4123GH Launchpad </p>
+                <a href = "#"> Learn more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-----------------------------------------------Contact----------------------------------------------->
+<div id="Contact">
+    <div class = "container">
+        <div class = "row">
+            <div class = "contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i> jasonchan076@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> (562)396-8895</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/jasonchan10/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/jason4851/jason_chan_github_page"><i class="fa-brands fa-square-github"></i></a>
+
+                </div>
+                <a href="images/Jason Chan Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder=" Your Name" required>
+                    <input type="email" name="Email" placeholder=" Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Built and designed by Jason Chan</p>
+            <p>All rights reserved <i class="fa-regular fa-copyright"></i></p>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJImPV_E1clVU5E8OBA2hwLbUAHuWpEaNCIK7DUXHdr5PbB4zro9xkywzGZlke0woT/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
